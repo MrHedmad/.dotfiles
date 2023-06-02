@@ -1,0 +1,13 @@
+
+dotfiles_dir = ".dotfiles"
+
+[settings]
+posthooks = ["echo 'Toml Bombadil, Toml Bombadillo!'"]
+
+[settings.dots]
+# Neovim, the editor
+neovim = { source = "nvim", target = ".config/nvim" }
+
+# Kitty, the terminal emulator
+kitty = { source = "kitty", target = ".config/kitty" }
+
