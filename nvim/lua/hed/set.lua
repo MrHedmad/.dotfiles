@@ -1,6 +1,4 @@
 -- Flags to be set with various options
-vim.opt.guicursor = ""
-
 vim.opt.nu = true
 vim.opt.relativenumber = true
 

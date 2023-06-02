@@ -11,3 +11,8 @@ neovim = { source = "nvim", target = ".config/nvim" }
 # Kitty, the terminal emulator
 kitty = { source = "kitty", target = ".config/kitty" }
 
+# Git - for git stuff, you know?
+git = { source = "git/.gitconfig", target = ".gitconfig" }
+
+# Shell things, like aliases
+shell_aliases = { source = "shell/.aliases", target = ".aliases" }
