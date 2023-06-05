@@ -1,4 +1,4 @@
-
+# Toml Bombadil configuration
 dotfiles_dir = ".dotfiles"
 
 [settings]
@@ -16,3 +16,5 @@ git = { source = "git/.gitconfig", target = ".gitconfig" }
 
 # Shell things, like aliases
 shell_aliases = { source = "shell/.aliases", target = ".aliases" }
+shell_config = { source = "shell/.zshrc", target = ".zshrc" }
+
