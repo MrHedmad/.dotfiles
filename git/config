@@ -1,0 +1,18 @@
+[user]
+	email = luca.visentin@unito.it
+	name = Luca Visentin
+[init]
+	defaultBranch = main
+[push]
+	autoSetupRemote = true
+[core]
+	editor = nvim
+[pull]
+	rebase = false
+[alias]
+	unstage = reset HEAD --
+    last = !git log -1 HEAD | cat
+    # This next one is from a stackoverflow answer. Don't judge, it's way
+    # too hard for me
+    tree = log --all --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset) %C(bold cyan)(committed: %cD)%C(reset) %C(auto)%d%C(reset)%n''          %C(white)%s%C(reset)%n''          %C(dim white)- %an <%ae> %C(reset) %C(dim white)(committer: %cn <%ce>)%C(reset)'
+
