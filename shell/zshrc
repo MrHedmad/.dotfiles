@@ -5,11 +5,18 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-# Set my EDITOR
 export EDITOR="/usr/bin/nvim"
 
-# If you come from bash you might have to change your $PATH.
-export PATH=$HOME/bin:/usr/local/bin:$HOME/.local/bin:$HOME/.cargo/bin:$PATH
+# Update my PATH
+path+=$HOME/bin
+path+=/usr/local/bin
+path+=$HOME/.local/bin
+# Cargo binaries from `cargo install`
+path+=$HOME/.cargo/bin
+# Latex binaries
+path+=/usr/local/texlive/2023/bin/x86_64-linux
+
+export PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH="/home/hedmad/.oh-my-zsh"
