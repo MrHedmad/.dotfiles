@@ -7,18 +7,33 @@ return require('packer').startup(function(use)
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
 
+  -- Telescope :: A fuzzy finder for files
+  -- config: /lua/after/plugins/telescope.lua
   use {
     'nvim-telescope/telescope.nvim', tag = '0.1.1',
     requires = { {'nvim-lua/plenary.nvim'} }
   }
 
-  use {'nyoom-engineering/oxocarbon.nvim'}
-  
-  use {
-        'nvim-treesitter/nvim-treesitter',
-        run = ':TSUpdate'
-    }
+  -- Color scheme :: nordic by AlexvZyl
+  -- github.com/AlexvZyl/nordic.nvim
+  -- config: /lua/after/plugins/colors.lua
+  use {'AlexvZyl/nordic.nvim'}
+
+  -- Treesitter :: A synthax highlighting engine/tool
+  -- makes it possible to install a bunch of tree-sitter
+  -- compatible plugins and stuff.
+  -- It works by generating a tree of keywords, which then the
+  -- various engines can look at and manipulate.
+  -- config: /lua/after/plugins/treesitter.lua
+  use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
+
+  -- Harpoon :: A way to swap between frequently used file *fast*
+  -- config: /lua/after/plugins/harpoon.lua
   use('theprimeagen/harpoon')
+
+  -- Undotree :: See your undo history, even if branching.
+  -- You can then revert to any previous state. Works a bit like
+  -- git log.
   use('mbbill/undotree')
   use('tpope/vim-fugitive')
 
