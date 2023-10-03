@@ -37,6 +37,9 @@ return require('packer').startup(function(use)
   use('mbbill/undotree')
   use('tpope/vim-fugitive')
 
+  -- Highlght of indentation
+  use 'lukas-reineke/indent-blankline.nvim'
+
   use {
   'VonHeikemen/lsp-zero.nvim',
   branch = 'v2.x',
