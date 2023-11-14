@@ -1,3 +1,55 @@
 alias gits="git status"
 alias activate="source ./env/bin/activate"
 alias config="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
+# Not really an alias but
+bonsai() { rg --files $@|tree --fromfile --dirsfirst }
+body() {
+    POSITIONALS=()
+    LINES=10
+    PRINT_HEAD=false
+
+    while [[ $# -gt 0 ]]; do
+        case $1 in
+            -n|--lines)
+                LINES="$2"
+                shift
+                shift
+                ;;
+            -h|--head)
+                PRINT_HEAD=true
+                shift
+                ;;
+            -*|--*)
+                echo "Unknown option $1"
+                exit 1
+                ;;
+            *)
+                POSITIONALS+=("$1")
+                shift
+                ;;
+        esac
+    done
+
+    set -- "${POSITIONALS[@]}"
+
+    if [[ -z $1 ]]; then
+        echo "Missing target file."
+        exit 1
+    fi
+    
+    result=""
+    total_lines=$(wc -l < $1)
+    if [ $PRINT_HEAD = true ]; then
+        result+=$(head -n 1 $1)
+        result+="\n"
+    fi
+
+    if [[ $LINES -gt $total_lines ]]; then
+        cat $1
+        exit 0
+    fi
+    
+    result+=$(cat $1 | head -n $(( $(( $(( $total_lines - $LINES )) / 2 )) + $LINES )) | tail -n $LINES)
+
+    echo $result
+}

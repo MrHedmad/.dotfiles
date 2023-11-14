@@ -10,7 +10,7 @@ return require('packer').startup(function(use)
   -- Telescope :: A fuzzy finder for files
   -- config: /lua/after/plugins/telescope.lua
   use {
-    'nvim-telescope/telescope.nvim',
+    'nvim-telescope/telescope.nvim', tag = '0.1.4',
     requires = { {'nvim-lua/plenary.nvim'} }
   }
 
