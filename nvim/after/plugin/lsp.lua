@@ -30,7 +30,7 @@ require('lspconfig').pylsp.setup {
     -- configure plugins in pylsp
     pylsp = {
       plugins = {
-        pyflakes = {enabled = false},
+        pyflakes = {enabled = true},
         pylint = {enabled = false},
         autopep8 = {enabled = false},
         pycodestyle = {enabled = false},
