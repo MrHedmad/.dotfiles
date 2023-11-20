@@ -39,6 +39,17 @@ require('lspconfig').pylsp.setup {
   }
 }
 
+-- Rust inlay hints
+require'lspconfig'.rust_analyzer.setup{
+  settings = {
+    ['rust-analyzer'] = {
+      diagnostics = {
+        enable = true;
+      }
+    }
+  }
+}
+
 -- Autocompletion things
 -- see https://github.com/VonHeikemen/lsp-zero.nvim/blob/v2.x/doc/md/autocomplete.md
 local cmp = require('cmp')
