@@ -22,4 +22,7 @@ cmp.setup({
     }
 )
 
+-- Make it so that :W acts the same as :w
+-- since I constantly mistype it.
+vim.cmd('command! -bang -range=% -complete=file -nargs=* W <line1>,<line2>write<bang> <args>')
 
