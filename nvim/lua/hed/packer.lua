@@ -58,7 +58,10 @@ return require('packer').startup(function(use)
     {'hrsh7th/nvim-cmp'},     -- Required
     {'hrsh7th/cmp-nvim-lsp'}, -- Required
     {'L3MON4D3/LuaSnip'},     -- Required
-  }
+  };
+
+  -- Rust inline type hints
+  use 'simrat39/rust-tools.nvim'
 
 }
 end)
