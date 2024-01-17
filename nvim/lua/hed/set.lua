@@ -2,12 +2,15 @@
 vim.opt.nu = true
 vim.opt.relativenumber = true
 
-vim.opt.tabstop = 4
-vim.opt.softtabstop = 4
-vim.opt.shiftwidth = 4
-vim.opt.expandtab = true
+local function settab (ind)
+    vim.opt.tabstop = ind
+    vim.opt.softtabstop = ind
+    vim.opt.shiftwidth = ind
+    vim.opt.expandtab = true
+end
 
 vim.opt.smartindent = true
+settab(4)
 
 vim.opt.wrap = false
 
@@ -29,3 +32,24 @@ vim.opt.updatetime = 50
 
 vim.opt.colorcolumn = "80"
 
+-- Autocommands
+local autocmd = vim.api.nvim_create_autocmd
+local augroup = vim.api.nvim_create_augroup
+
+local hed_autocmds = augroup('hedmad', {clear = true})
+autocmd("BufEnter", {
+    group = hed_autocmds,
+    pattern = {"*.R", "*.r"},
+    callback = function ()
+        print "Entered R file"
+        settab(2)
+    end
+})
+autocmd("BufLeave", {
+    group = hed_autocmds,
+    pattern = {"*.R", "*.r"},
+    callback = function ()
+        print "Exited R file"
+        settab(4)
+    end
+})
