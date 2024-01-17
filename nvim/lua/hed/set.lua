@@ -41,7 +41,6 @@ autocmd("BufEnter", {
     group = hed_autocmds,
     pattern = {"*.R", "*.r"},
     callback = function ()
-        print "Entered R file"
         settab(2)
     end
 })
@@ -49,7 +48,6 @@ autocmd("BufLeave", {
     group = hed_autocmds,
     pattern = {"*.R", "*.r"},
     callback = function ()
-        print "Exited R file"
         settab(4)
     end
 })
