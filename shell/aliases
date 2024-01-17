@@ -53,3 +53,13 @@ body() {
 
     echo $result
 }
+
+lens() {
+    if [[ $1 =~ ".*\.csv" ]]; then
+        csvlens $@
+    elif [[ $1 =~ ".*\.tsv" ]]; then
+        csvlens $@ -t
+    else
+        less $@
+    fi
+}
