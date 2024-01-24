@@ -18,3 +18,6 @@ git = { source = "git/config", target = ".gitconfig" }
 shell_aliases = { source = "shell/aliases", target = ".aliases" }
 shell_config = { source = "shell/zshrc", target = ".zshrc" }
 
+# Language things
+R_linting = { source = "languages/R/lintr", target = ".lintr" }
+
