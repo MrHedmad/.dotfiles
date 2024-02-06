@@ -18,6 +18,7 @@ return require('packer').startup(function(use)
   -- github.com/AlexvZyl/nordic.nvim
   -- config: /lua/after/plugins/colors.lua
   use {'AlexvZyl/nordic.nvim'}
+  use {'folke/tokyonight.nvim'}
 
   -- Treesitter :: A synthax highlighting engine/tool
   -- makes it possible to install a bunch of tree-sitter
