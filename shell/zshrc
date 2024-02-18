@@ -135,3 +135,6 @@ fi
 
 # Rust flag to allow cargo run to accept user input.
 export RUST_STDOUT_LINE_BUFFERED=1
+
+eval "$(zoxide init --cmd cd zsh)"
+
