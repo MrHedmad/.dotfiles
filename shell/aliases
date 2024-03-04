@@ -60,6 +60,6 @@ lens() {
     elif [[ $1 =~ ".*\.tsv" ]]; then
         csvlens $@ -t
     else
-        less $@
+        bat $@
     fi
 }
