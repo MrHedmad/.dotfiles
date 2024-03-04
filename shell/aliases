@@ -1,8 +1,32 @@
 alias gits="git status"
 alias activate="source ./env/bin/activate"
 alias config="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
+alias lt="fd --type f --hidden --exclude .git" # "List Tree"
+
+# Check if stuff is installed
+doctor() {
+    echo "The doctor will see you now..."
+    
+    echo "Checking everything is installed properly..."
+    declare -A utils
+    utils=( \
+        [fd]="https://github.com/sharkdp/fd" \
+        [bat]="https://github.com/sharkdp/bat" \
+        [tree]="https://en.wikipedia.org/wiki/Tree_(command)" \
+        [rg]="https://github.com/BurntSushi/ripgrep" \
+        [fzf]="https://github.com/junegunn/fzf" \
+    )
+
+    for util link in ${(kv)utils}; do
+        if command -v $util &> /dev/null ; then
+            echo "✅ '$util' is installed!"
+        else
+            echo "⚠️  '$util' not found. Find it @ $link"
+        fi
+    done
+}
+
 # Not really an alias but
-bonsai() { rg --files $@|tree --fromfile --dirsfirst }
 body() {
     POSITIONALS=()
     LINES=10
