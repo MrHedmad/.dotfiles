@@ -15,6 +15,7 @@ doctor() {
         [tree]="https://en.wikipedia.org/wiki/Tree_(command)" \
         [rg]="https://github.com/BurntSushi/ripgrep" \
         [fzf]="https://github.com/junegunn/fzf" \
+        [sponge]="https://man.archlinux.org/man/sponge.1" \
     )
 
     for util link in ${(kv)utils}; do
