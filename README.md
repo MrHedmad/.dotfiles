@@ -2,6 +2,9 @@
 
 These are my dotfiles. They are managed by [`toml bombadil`](https://github.com/oknozor/toml-bombadil).
 
+You can use `doctor` to check if the configuration works.
+See `shell/doctor.sh` for more info.
+
 ## Branches
 Each branch is a different configuration for an environment:
 - `arch` for Arch Linux machines running `zsh`.
