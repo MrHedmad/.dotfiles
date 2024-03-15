@@ -20,6 +20,7 @@ utils=( \
     [fzf]="https://github.com/junegunn/fzf" \
     [sponge]="https://man.archlinux.org/man/sponge.1" \
     [nvim]="https://neovim.io" \
+    [omz]="https://ohmyz.sh/"
 )
 
 for util link in ${(kv)utils}; do
