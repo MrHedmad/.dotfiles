@@ -70,6 +70,10 @@ vim.opt.cursorline = true
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.opt.scrolloff = 10
 
+-- Default tabstop and expandtab (see vim-sleuth below for more)
+vim.set.tabstop = 4
+vim.set.expandtab = true
+
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
 
@@ -449,7 +453,9 @@ require('lazy').setup({
       --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
       --  See `:help lspconfig-all` for a list of all supported languages.
       local servers = {
-        pyright = {},
+        -- Python erros (pyflakes) + language server
+        pyflakes = {},
+        jedi_language_server = {},
         rust_analyzer = {},
         r_language_server = {},
         lua_ls = {
