@@ -71,8 +71,8 @@ vim.opt.cursorline = true
 vim.opt.scrolloff = 10
 
 -- Default tabstop and expandtab (see vim-sleuth below for more)
-vim.set.tabstop = 4
-vim.set.expandtab = true
+vim.opt.tabstop = 4
+vim.opt.expandtab = true
 
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
