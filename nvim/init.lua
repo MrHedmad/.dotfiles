@@ -74,7 +74,7 @@ vim.opt.scrolloff = 10
 vim.opt.tabstop = 4
 vim.opt.expandtab = true
 
--- Show a coloured column
+-- Show colored columns
 vim.opt.colorcolumn = '80,120'
 
 -- [[ Basic Keymaps ]]
@@ -155,6 +155,7 @@ vim.opt.rtp:prepend(lazypath)
 -- NOTE: Here is where you install your plugins.
 require('lazy').setup({
   'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
+  { 'Bekaboo/deadcolumn.nvim', opts = {} },
 
   -- Gradually show the color column
   'Bekaboo/deadcolumn.nvim',
