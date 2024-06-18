@@ -13,14 +13,14 @@ section "Checking everything is installed properly..."
 
 declare -A utils
 utils=( \
-    [fd]="https://github.com/sharkdp/fd" \
-    [bat]="https://github.com/sharkdp/bat" \
-    [tree]="https://en.wikipedia.org/wiki/Tree_(command)" \
-    [rg]="https://github.com/BurntSushi/ripgrep" \
-    [fzf]="https://github.com/junegunn/fzf" \
-    [sponge]="https://man.archlinux.org/man/sponge.1" \
-    [nvim]="https://neovim.io" \
-    [omz]="https://ohmyz.sh/"
+    [fd]="https://github.com/sharkdp/fd (fd)" \
+    [bat]="https://github.com/sharkdp/bat (bat)" \
+    [tree]="https://en.wikipedia.org/wiki/Tree_(command) (tree)" \
+    [rg]="https://github.com/BurntSushi/ripgrep (ripgrep)" \
+    [fzf]="https://github.com/junegunn/fzf (fzf)" \
+    [sponge]="https://man.archlinux.org/man/sponge.1 (moreutils)" \
+    [nvim]="https://neovim.io (neovim)" \
+    [starship]="https://starship.rs (starship)"
 )
 
 for util link in ${(kv)utils}; do
@@ -32,7 +32,7 @@ for util link in ${(kv)utils}; do
 done
 
 section "Checking for updates..."
-echo -n "Are dotfiles are up-to-date? "
+echo -n "Are dotfiles up-to-date? "
 UPSTREAM=${1:-'@{u}'}
 LOCAL=$(git -C $HOME/.dotfiles rev-parse @)
 REMOTE=$(git -C $HOME/.dotfiles rev-parse "$UPSTREAM")
