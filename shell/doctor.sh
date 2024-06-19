@@ -19,8 +19,7 @@ utils=( \
     [rg]="https://github.com/BurntSushi/ripgrep (ripgrep)" \
     [fzf]="https://github.com/junegunn/fzf (fzf)" \
     [sponge]="https://man.archlinux.org/man/sponge.1 (moreutils)" \
-    [nvim]="https://neovim.io (neovim)" \
-    [starship]="https://starship.rs (starship)"
+    [nvim]="https://neovim.io (neovim)"
 )
 
 for util link in ${(kv)utils}; do
