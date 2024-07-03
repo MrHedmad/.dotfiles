@@ -22,3 +22,5 @@ the_doctor = { source = "shell/doctor.sh", target = ".local/bin/doctor"}
 # Language things
 R_linting = { source = "languages/R/lintr", target = ".lintr" }
 
+# SSH config
+ssh_config = { source = "ssh/config", target = ".ssh/config"}
