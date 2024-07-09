@@ -31,7 +31,8 @@ for util link in ${(kv)utils}; do
     fi
 done
 
-section "Checking for updates..."
+section "Checking for dotfile updates..."
+git -C $HOME/.dotfiles/ fetch
 echo -n "Are dotfiles up-to-date? "
 UPSTREAM=${1:-'@{u}'}
 LOCAL=$(git -C $HOME/.dotfiles rev-parse @)
