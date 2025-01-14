@@ -134,6 +134,14 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   end,
 })
 
+-- Set .cwl to be interpreted as YAML
+-- Here additional filetypes can be specified
+vim.filetype.add {
+  extension = {
+    cwl = 'yaml',
+  },
+}
+
 -- [[ Install `lazy.nvim` plugin manager ]]
 --    See `:help lazy.nvim.txt` or https://github.com/folke/lazy.nvim for more info
 local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
@@ -460,9 +468,7 @@ require('lazy').setup({
       --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
       --  See `:help lspconfig-all` for a list of all supported languages.
       local servers = {
-        -- Python erros (pyflakes) + language server
-        pyflakes = {},
-        jedi_language_server = {},
+        ruff = {},
         rust_analyzer = {},
         r_language_server = {},
         lua_ls = {
